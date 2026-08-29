@@ -80,7 +80,7 @@ zstyle ':fzf-tab:complete:git-(checkout|co):*' fzf-preview \
 zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' prefix ' '
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-zstyle ':fzf-tab:*' fzf-flags --bind=shift-alt-up:preview-half-page-up,shift-alt-down:preview-half-page-down --preview-window=wrap-word
+zstyle ':fzf-tab:*' fzf-flags --bind=shift-alt-up:preview-half-page-up,shift-alt-down:preview-half-page-down --preview-window=wrap
 zstyle ':fzf-tab:*' popup-min-size 50 8
 zstyle ':fzf-tab:*' show-group 'full'
 zstyle ':fzf-tab:*' single-group color header
