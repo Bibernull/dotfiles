@@ -27,11 +27,11 @@ fi
 
 (( ! $+commands[fzf] && $+functions[disable-fzf-tab]  )) && disable-fzf-tab
 
-if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+if [[ $LC_TERMINAL == "iTerm2" ]]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
-if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+if [[ $LC_TERMINAL == "iTerm2" ]]; then
   # key bindings
   [ -f ~/.zbindings ] && source ~/.zbindings
   bindkey -s '^ ' ' git status --short^M'
