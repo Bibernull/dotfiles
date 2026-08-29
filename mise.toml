@@ -22,6 +22,7 @@ run = "mise bootstrap repos exec ~/.zprezto/contrib  -- git submodule update --i
 "~/.tmux.conf" = { source = "src/tmux.conf", mode = "copy" }
 "~/.vimrc" = { source = "src/vimrc", mode = "copy" }
 "~/.zpreztorc" = { source = "src/zpreztorc", mode = "copy" }
+"~/.lessfilter" = "~/.zprezto/contrib/fzf-tab-source/bin/lessfilter"
 
 "~/.zshrc/dotfiles" = { source = "src/zshrc.zsh", template = "tera"}
 "~/.zprofile/dotfiles" = { source = "src/zprofile.zsh", template = "tera"}
