@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+#MISE description="Bootstrap packages manually with macports (because mise does not support intel macos)"
+
+sudo port install bat bat-extras eza fzf gh jq

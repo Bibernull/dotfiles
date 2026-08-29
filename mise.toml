@@ -1,0 +1,38 @@
+[settings]
+dotfiles.root = "~/.dotfiles"
+dotfiles.default_mode = "symlink"
+
+[bootstrap.packages]
+"apt:bat" = "latest"
+"apt:bat-extras" = "latest"
+"apt:eza" = "latest"
+"apt:fzf" = "latest"
+"apt:git" = "latest"
+"apt:gh" = "latest"
+"apt:jq" = "latest"
+"apt:zsh" = "latest"
+
+[bootstrap.repos]
+"~/.zprezto" = { url = "https://github.com/sorin-ionescu/prezto.git", ref = "master" }
+"~/.zprezto/contrib" = { url = "https://github.com/Bibernull/prezto-contrib.git", ref = "master" }
+
+[bootstrap.hooks.post-repos]
+run = "mise bootstrap repos exec ~/.zprezto/contrib  -- git submodule update --init --recursive"
+
+[dotfiles]
+"~/.tmux.conf" = { source = "src/tmux.conf", mode = "copy" }
+"~/.vimrc" = { source = "src/vimrc", mode = "copy" }
+"~/.zpreztorc" = { source = "src/zpreztorc", mode = "copy" }
+
+"~/.zshrc/dotfiles" = { source = "src/zshrc.zsh", template = "tera"}
+"~/.zprofile/dotfiles" = { source = "src/zprofile.zsh", template = "tera"}
+
+"~/.dotfiles/gitconfig" = { source = "src/gitconfig", mode = "copy"}
+"~/.dotfiles/spaceship.zsh-theme" = { source = "spaceship.zsh-theme", mode = "copy"}
+"~/.dotfiles/aliases.zsh/dotfiles" = { source = "aliases.zsh", template = "tera" }
+"~/.dotfiles/functions.zsh/dotfiles" = { source = "functions.zsh", template = "tera" }
+"~/.dotfiles/functions" = { source = "functions", mode = "copy" }
+"~/.gitconfig/include" = { block = '''
+[include]
+	path = ~/.dotfiles/gitconfig
+''' }

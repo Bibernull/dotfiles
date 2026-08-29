@@ -1,0 +1,21 @@
+[core]
+	fileMode = false
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+	default = current
+[alias]
+	co = checkout
+	pulls = "!f(){ git pull $@ ; git submodule foreach git pull $@ ; };f"
+	pushs = "!f(){ git push $@ ; git submodule foreach git push $@ ; };f"
+	lg = "log --color --graph --pretty=format:'%C(#dc322f)%h%C(#b58900)%d %C(#eee8d5)%s %C(#dc322f)| %C(#586f75)%cr %C(#dc322f)| %C(#586e75)%an%Creset' --abbrev-commit"
+	s = status
+	st = status
+
+[diff]
+	# Detect copies as well as renames
+	renames = copies
+	mnemonicprefix = true
+	submodule = log
+	colorMoved = default
