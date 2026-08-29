@@ -8,6 +8,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(${HOME}/.local/bin/mise activate zsh)"
 
-mise use -g usage
+mise trust
+mise use -g usage bat-extras
 
 mise bootstrap
