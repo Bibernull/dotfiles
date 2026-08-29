@@ -4,7 +4,6 @@ dotfiles.default_mode = "symlink"
 
 [bootstrap.packages]
 "apt:bat" = "latest"
-"apt:bat-extras" = "latest"
 "apt:eza" = "latest"
 "apt:fzf" = "latest"
 "apt:git" = "latest"
