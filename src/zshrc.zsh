@@ -11,7 +11,10 @@ then
 fi
 
 if [[ -d "$HOME/.local/share/terminfo" && -n "$HOME/.local/share/terminfo"/*(NY1) ]]; then
-  export -U TERMINFO_DIRS=$HOME/.local/share/terminfo:$TERMINFO_DIRS
+  TERMINFO_DIRS=$HOME/.local/share/terminfo:$TERMINFO_DIRS
+  typeset -aU terminfo_dirs=( ${(s_:_)TERMINFO_DIRS} )
+  export TERMINFO_DIRS="${(j|:|)terminfo_dirs}"
+  unset terminfo_dirs
 fi
 
 ZSH_AUTOSUGGEST_MANUAL_REBIND=1
