@@ -28,7 +28,11 @@ if [[ -s "${HOME}/.zprezto/init.zsh" ]]; then
   source "${HOME}/.zprezto/init.zsh"
 fi
 
-(( ! $+commands[fzf] && $+functions[disable-fzf-tab]  )) && disable-fzf-tab
+if (( ! $+commands[fzf] && $+functions[disable-fzf-tab] )); then
+  disable-fzf-tab
+else
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
 
 if [[ $LC_TERMINAL == "iTerm2" ]]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
