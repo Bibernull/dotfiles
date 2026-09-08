@@ -16,7 +16,10 @@ dotfiles.default_mode = "symlink"
 "~/.zprezto/contrib" = { url = "https://github.com/Bibernull/prezto-contrib.git", ref = "master" }
 
 [bootstrap.hooks.post-repos]
-run = "mise bootstrap repos exec ~/.zprezto/contrib  -- git submodule update --init --recursive"
+run = [
+	"mise bootstrap repos exec ~/.zprezto  -- git submodule update --init --recursive",
+	"mise bootstrap repos exec ~/.zprezto/contrib  -- git submodule update --init --recursive"
+]
 
 [dotfiles]
 "~/.tmux.conf" = { source = "src/tmux.conf", mode = "copy" }
