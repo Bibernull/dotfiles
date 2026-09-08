@@ -11,7 +11,7 @@ eval "$(${HOME}/.local/bin/mise activate zsh)"
 mise trust -y
 mise use -y -g usage bat-extras
 
-if command -v dpkg-query >/dev/null 2>&1 && ! dpkg-query -p eza >/dev/null 2>&1; then
+if (( EUID == 0 )) && command -v dpkg-query >/dev/null 2>&1 && ! dpkg-query -p eza >/dev/null 2>&1; then
     apt update
     apt install -y gpg
 
