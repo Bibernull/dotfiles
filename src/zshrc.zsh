@@ -57,6 +57,13 @@ setopt LONG_LIST_JOBS
 setopt CLOBBER
 setopt GLOB
 setopt NOCOMPLETEALIASES
+setopt INC_APPEND_HISTORY
+setopt HIST_REDUCE_BLANKS
+setopt HIST_NO_STORE
+unsetopt SHARE_HISTORY
+unsetopt HIST_BEEP
+SAVEHIST=50000
+HISTSIZE=50000
 
 source $DOTFILES/aliases.zsh
 source $DOTFILES/functions.zsh
