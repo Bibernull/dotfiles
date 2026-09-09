@@ -2,6 +2,9 @@
 dotfiles.root = "~/.dotfiles"
 dotfiles.default_mode = "symlink"
 
+[bootstrap.hooks.pre-packages]
+run = "~/.local/bin/mise bootstrap-apt-repo-eza"
+
 [bootstrap.packages]
 "apt:bat" = "latest"
 "apt:eza" = "latest"
@@ -17,9 +20,12 @@ dotfiles.default_mode = "symlink"
 
 [bootstrap.hooks.post-repos]
 run = [
-	"mise bootstrap repos exec ~/.zprezto  -- git submodule update --init --recursive",
-	"mise bootstrap repos exec ~/.zprezto/contrib  -- git submodule update --init --recursive"
+	"~/.local/bin/mise bootstrap repos exec ~/.zprezto  -- git submodule update --init --recursive",
+	"~/.local/bin/mise bootstrap repos exec ~/.zprezto/contrib  -- git submodule update --init --recursive"
 ]
+
+[bootstrap.hooks.pre-dotfiles]
+run = "~/.local/bin/mise zdot-backup"
 
 [dotfiles]
 "~/.tmux.conf" = { source = "src/tmux.conf", mode = "copy" }

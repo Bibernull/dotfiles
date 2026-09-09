@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+if [[ ! -d "$HOME/.dotfiles" ]]; then
+  [[ -f "$HOME/.zshrc" ]] && mv $HOME/.zshrc $HOME/.zshrc.bak
+  [[ -f "$HOME/.zprofile" ]] && mv $HOME/.zprofile $HOME/.zprofile.bak
+fi
