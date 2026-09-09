@@ -28,6 +28,7 @@ run = [
 run = "~/.local/bin/mise zdot-backup"
 
 [dotfiles]
+"~/.local/bin/mise-pull" = { source = "src/mise-pull", mode = "copy" }
 "~/.tmux.conf" = { source = "src/tmux.conf", mode = "copy" }
 "~/.vimrc" = { source = "src/vimrc", mode = "copy" }
 "~/.zpreztorc" = { source = "src/zpreztorc", mode = "copy" }

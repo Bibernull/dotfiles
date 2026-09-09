@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+eval "$(${HOME}/.local/bin/mise activate zsh)"
+mise bootstrap --update --yes --from https://github.com/Bibernull/dotfiles.git
