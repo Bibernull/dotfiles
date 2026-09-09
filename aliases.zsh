@@ -1,6 +1,6 @@
 alias reload="exec $SHELL -l"
 alias l='"ls" -AlFh --color --group-directories-first'
-alias mise-pull="mise bootstrap --yes --from https://github.com/Bibernull/dotfiles.git"
+alias mise-pull="mise bootstrap --update --yes --from https://github.com/Bibernull/dotfiles.git"
 
 (( $+commands[batcat] )) && alias bat='batcat'
 (( $+commands[batcat] )) && alias cat='batcat'
