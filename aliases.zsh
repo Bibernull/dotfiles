@@ -1,5 +1,6 @@
 alias reload="exec $SHELL -l"
 alias l='"ls" -AlFh --color --group-directories-first'
+alias su='su -l'
 
 (( $+commands[batcat] )) && alias bat='batcat'
 (( $+commands[batcat] )) && alias cat='batcat'
