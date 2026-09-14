@@ -10,7 +10,6 @@ run = "~/.local/bin/mise bootstrap-apt-repo-eza"
 "apt:eza" = "latest"
 "apt:fzf" = "latest"
 "apt:git" = "latest"
-"apt:gh" = "latest"
 "apt:jq" = "latest"
 "apt:zsh" = "latest"
 
