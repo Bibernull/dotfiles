@@ -72,6 +72,6 @@ if [[ -s "$DOTFILES/spaceship.zsh-theme" && $prompt_theme == "spaceship" ]]; the
   source $DOTFILES/spaceship.zsh-theme
 fi
 
-(( $+commands[mise] )) && cached-eval mise activate zsh
+(( $+commands[mise] )) && eval "$(mise activate zsh)"
 
 typeset -Ug path
