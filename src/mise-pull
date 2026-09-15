@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
 
 eval "$(${HOME}/.local/bin/mise activate zsh)"
-mise bootstrap --update --yes --from https://github.com/Bibernull/dotfiles.git
+echo "${0:A} as ${USER}"
+mise bootstrap --update --yes --silent --from https://github.com/Bibernull/dotfiles.git
+echo "Done\n"
