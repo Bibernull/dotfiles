@@ -44,6 +44,7 @@ typeset -gU cdpath fpath mailpath path
 
 fpath=(
   $DOTFILES/functions(N)
+  $HOME/.local/share/zsh/site-functions(N)
   $fpath
 )
 
