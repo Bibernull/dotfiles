@@ -31,14 +31,14 @@ SPACESHIP_PROMPT_ORDER=(
   line_sep      # Line break
   #battery       # Battery level and status
   #vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
+  # jobs          # Background jobs indicator
+  # exit_code     # Exit code section
   char          # Prompt character
 )
 
 SPACESHIP_RPROMPT_ORDER=(
-  # time          # Time stampts section
-  # line_sep      # Line break
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
   # time          # Time stampts section
   # user          # Username section
   # dir           # Current directory section
@@ -69,8 +69,6 @@ SPACESHIP_RPROMPT_ORDER=(
   # line_sep      # Line break
   # battery       # Battery level and status
   # vi_mode       # Vi-mode indicator
-  # jobs          # Background jobs indicator
-  # exit_code     # Exit code section
   # char          # Prompt character
 )
 
@@ -83,9 +81,9 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_GIT_BRANCH_ASYNC=true
 
 #SPACESHIP_CHAR_SYMBOL="$"
-if [[ $TERM_PROGRAM == "iTerm.app" ]] && (( $+functions[iterm2_prompt_mark] )); then
-  SPACESHIP_CHAR_PREFIX="%{$(iterm2_prompt_mark)%}"
-fi
+# if [[ $TERM_PROGRAM == "iTerm.app" ]] && (( $+functions[iterm2_prompt_mark] )); then
+#   SPACESHIP_CHAR_PREFIX="%{$(iterm2_prompt_mark)%}"
+# fi
 SPACESHIP_CHAR_SUFFIX=""
 
 SPACESHIP_EXIT_CODE_SHOW=false
