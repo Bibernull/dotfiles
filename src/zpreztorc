@@ -53,6 +53,7 @@ zstyle ':prezto:load' pmodule \
 # Completion
 #
 
+zstyle ':completion:*:git-*:*' sort false
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 -a --color=always $realpath'
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 # zstyle ':fzf-tab:complete:*:options' fzf-preview
@@ -62,7 +63,7 @@ zstyle ':fzf-tab:complete:(-command-|-parameter-|-brace-parameter-|export|unset|
 zstyle ':fzf-tab:complete:git-(add|diff|restore):*' fzf-preview \
 	'git diff $word | delta'
 zstyle ':fzf-tab:complete:git-(log|lg):*' fzf-preview \
-	'git log --color=always $word'
+	'git lg --color=always $word'
 zstyle ':fzf-tab:complete:git-help:*' fzf-preview \
 	'git help $word | bat -plman --color=always'
 zstyle ':fzf-tab:complete:git-show:*' fzf-preview \
@@ -74,7 +75,7 @@ zstyle ':fzf-tab:complete:git-(checkout|co):*' fzf-preview \
 	'case "$group" in
 	"modified file") git diff $word | delta ;;
 	"recent commit object name") git show --color=always $word | delta ;;
-	*) git log --color=always $word ;;
+	*) git lg --color=always $word ;;
 	esac'
 
 zstyle ':fzf-tab:*' switch-group '<' '>'
